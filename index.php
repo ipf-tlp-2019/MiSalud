@@ -24,6 +24,7 @@
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -57,7 +58,7 @@
                         <a class="nav-link">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link">Mis Datos</a>
+                        <a class="nav-link">Mis Datos Personales</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link">Contactanos</a>
