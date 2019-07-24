@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon.png">
-    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="icon" type="image/png" href="images/logo-misalud.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
         MiSalud
@@ -26,13 +26,14 @@
 
 <body class="login-page sidebar-collapse">
 
-    <div class="page-header header-filter " style="background-image: url('./images/historia-clinica-digital.jpg') ;background-size: cover; background-position: top center;">
+    <div class="page-header" style="background-image: url('./images/historia-clinica-digital.jpg') ;background-size: cover; background-position: top center;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 ml-auto mr-auto">
                     <div class="card card-login">
                         <form class="form" method="" action="" autocomplete="off">
                             <div class="card-header card-header-primary text-center">
+
                                 <h4 class="card-title">MiSalud</h4>
                             </div>
                             <p class="description text-center">Seleccione el tipo de usuario:</p>
@@ -50,10 +51,10 @@
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">
-                                            <i class="material-icons">face</i>
+                                            <i class="material-icons">email</i>
                                             </span>
                                     </div>
-                                    <input type="text" class="form-control" id="identificador" placeholder="Nombre de Usuario">
+                                    <input type="email" class="form-control" id="correo_login" placeholder="Correo electrónico" required>
                                 </div>
 
                                 <div class="input-group">
@@ -62,7 +63,7 @@
                             <i class="material-icons">lock_outline</i>
                             </span>
                                     </div>
-                                    <input type="password" class="form-control" id="pass" placeholder="Contraseña">
+                                    <input type="password" class="form-control" id="password_login" placeholder="Contraseña " required>
                                 </div>
                             </div>
                             <br>
@@ -74,7 +75,7 @@
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true"><i class="material-icons">clear</i></span>
                                   </button>
-                                    <b>Error:</b> Datos ingresados incorrectos
+                                    <b>Error:</b> Contraseña o correo electrónico inválido.
                                 </div>
                             </div>
                             <div class="text-center">
@@ -85,10 +86,85 @@
                             <div>
                                 <p class="description text-center">Todavía no te registraste?:</p>
                                 <div class="text-center">
-                                    <input type="button" class="btn btn-primary text-center" value="Registrate!">
+                                    <input type="button" class="btn btn-primary text-center" value="Registrate!" data-toggle="modal" data-target="#myModal">
 
                                 </div>
+                                <!-- Classic Modal -->
+                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <div class="card-header card-header-primary text-center">
+                                                    <h4 class="card-title">&nbsp; Formulario de registro &nbsp;</h4>
+                                                </div>
 
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <i class="material-icons">clear</i>
+                                                    </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class=" input-group form-inline">
+                                                    <i class="material-icons">face</i>
+                                                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" pattern="[a-z]" &nbsp;&nbsp;&nbsp; <br>
+                                                    <input type="text" class="form-control" id="apellido" placeholder="Apellido" pattern="[a-z]" required>
+                                                </div>
+                                                <div class=" input-group form-inline">
+                                                    <i class="material-icons">email</i>
+
+                                                    <input type="email" class="form-control" id="correo" placeholder="Correo electrónico" required>
+                                                </div>
+                                                <div class=" input-group form-inline">
+                                                    <i class="material-icons">lock_outline</i><input type="password" class="form-control" id="contraseña1" placeholder="Contraseña" required>
+                                                </div>
+                                                <div class=" input-group form-inline">
+                                                    <i class="material-icons">lock_outline</i> <input type="password" class="form-control" id="contraseña2" placeholder="Confirmar contraseña" required>
+                                                </div>
+
+                                                <div class="alert alert-danger" id="alertRegistro" style="display:none">
+                                                    <div class="container">
+                                                        <div class="alert-icon">
+                                                            <i class="material-icons">error_outline</i>
+                                                        </div>
+                                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                            <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                                                          </button>
+                                                        <b>Error:</b> <b id="textAlertRegistro">Datos ingresados invalidos</b>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-success" id="btnAceptarRegistro">Aceptar</button> &nbsp;
+                                                <button type="button" class="btn btn-danger " data-dismiss="modal">Cerrar</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--  End Modal -->
+                            </div>
+                            <!-- Modal -->
+                            <div class="modal fade" id="ModalCorrecto" role="dialog" tabindex="-1">
+                                <div class="modal-dialog modal-sm modal-sm">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+
+                                            <h4 class="modal-title">Registrado Correctamente</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="input-group">
+                                                <img src="./images/Submit_thanks.gif" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div class="input-group">
+
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Aceptar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                         </form>
@@ -102,9 +178,77 @@
     </div>
 
 
-    <script src="js/login/login.js">
-    </script>
+    <script src="js/login/login.js"></script>
     <script src="js/material-kit.js?v=2.0.5" type="text/javascript"></script>
+
+
+
+    <script>
+        $(document).ready(function() {
+            $('#btnAceptarRegistro').click(function() {
+                let nombre = $('#nombre').val()
+                let apellido = $('#apellido').val()
+                let correo = $('#correo').val()
+                let password1 = $('#contraseña1').val()
+                let password2 = $('#contraseña2').val()
+
+                if (password1 === password2 && password1 != "" && password2 != "") {
+                    $('#alertRegistro').hide()
+
+                    let parametros = {
+                        nombre: nombre,
+                        apellido: apellido,
+                        correo: correo,
+                        password: password1
+                    }
+                    $.ajax({
+                        type: "POST",
+                        url: "./modulos/php/registroUsuario/registroUsuario.php",
+                        data: parametros,
+                        success: function(respuesta) {
+                            console.log(respuesta)
+                            if (respuesta == true) {
+                                $('#ModalCorrecto').modal('show')
+
+                            } else {
+                                $('#alertRegistro').hide()
+                                $('#textAlertRegistro').text("El correo ingresado fué utilizado.")
+
+                                $('#alertRegistro').fadeOut(5000)
+
+                            }
+                        },
+                        beforeSend: function() {
+
+                        }
+                    });
+
+                } else {
+                    $('#alertRegistro').show()
+                    $('#textAlertRegistro').text("Las contraseñas ingresadas no coinciden.")
+
+                    $('#alertRegistro').fadeOut(5000)
+
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            })
+        })
+    </script>
+
 </body>
 
 </html>

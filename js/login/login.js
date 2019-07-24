@@ -1,12 +1,13 @@
 let btnLogin = document.getElementById('btnLogin')
 
 btnLogin.addEventListener('click', function() {
-    let identificador = document.getElementById('identificador').value
-    let password = document.getElementById('pass').value
+
+    let identificador = $('#correo_login').val()
+    let password = document.getElementById('password_login').value
 
     let parametros = {
         method: 'POST',
-        identificador: identificador,
+        correo: identificador,
         password: password
     }
     $.ajax({
@@ -14,7 +15,7 @@ btnLogin.addEventListener('click', function() {
         url: "./modulos/php/login/login.php",
         data: parametros,
         success: function(respuesta) {
-            if (respuesta == true) {
+            if (respuesta != false) {
                 document.getElementById("alertDanger").style.display = 'none';
                 window.location.href = "index.php";
 

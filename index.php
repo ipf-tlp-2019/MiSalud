@@ -128,7 +128,23 @@
     </div>
     </div>
     </div>
-
+    <!--
+    <nav class="navbar navbar-expand-lg bg-primary" style="position: fixed;
+left: 0;
+right: 0;
+bottom: 0;
+z-index:999">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand"><i class="fas fa-laptop-medical" style="font-size:36px;"></i> &nbsp;<span>Aca irían </span><b>Iconos</b> </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                
+                </button>
+            </div>
+     
+        </div>
+    </nav>
+                -->
 <script>
     $("#btnCloseSession").click(function(){
         <?php

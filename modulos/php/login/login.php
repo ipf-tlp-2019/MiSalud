@@ -1,20 +1,23 @@
 <?php
 require "./consultasUsuarios.php";
 
-if (isset($_POST['identificador']) && isset($_POST['password'])) {
-      $identificador= trim($_POST['identificador']);
+if (isset($_POST['correo']) && isset($_POST['password'])) {
+      $correo= trim($_POST['correo']);
       $password= trim($_POST['password']);
       
-      $validacion= consultarUsuario($identificador, $password);
+      $validacion= consultarUsuario($correo, $password); // si existe usuario me devuelve el nombre y apellido
+      // si no existe devuelve
+
     
-      echo $validacion;
+      echo $validacion; 
 
 }else{
     echo false;
 }
-   
-
 session_start();
-$_SESSION['userName']=$identificador; 
+   
+$_SESSION['userName']=$validacion; 
+
+
 
 ?>
