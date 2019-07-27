@@ -25,10 +25,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="js/bootstrap-datetimepicker.js"></script>
+
 
 </head>
 
-<body class="index-page sidebar-collapse ">
+<body class="index-page sidebar-collapse">
 
     <nav class="navbar navbar-expand-lg bg-primary">
         <div class="container">
@@ -41,38 +43,41 @@
                 <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
+
             <div class="collapse navbar-collapse ">
                 <ul class="navbar-nav ml-auto">
-                <li class="active nav-item">
-                        <a class="nav-link"><i class="material-icons">account_circle</i>
-                	<?php if($_SESSION['userName']<>""){
+               
+                    <div class="dropdown-divider"></div>
+                    <li class="dropdown nav-item">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                            <i class="material-icons">account_circle</i> 
+                            <?php if($_SESSION['userName']<>""){
 						echo $_SESSION['userName'];
    
 					}else{
 						header('location: ./login.html');
                     } ?>
-                    </a>
+                        </a>
+                        <div class="dropdown-menu dropdown-with-icons">
+                           
+                            <a  class="dropdown-item"  id="date_personal">
+                                <i class="material-icons">content_paste</i> Mis Datos Personales
+                            </a>
+                            <a href="./index.html" class="dropdown-item">
+                                <i class="material-icons">forum</i> Contactanos
+                            </a>
+                            <a class="dropdown-item">
+                            <button class="btn btn-danger form-control" id="btnCloseSession">Cerrar sesión</button>
+                            </a>
+                        </div>
                     </li>
-                    <div class="dropdown-divider"></div>
-                    <li class=" nav-item">
-                        <a class="nav-link">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">Mis Datos Personales</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">Contactanos</a>
-                    </li>
-                    <li class="nav-item">
-                       <button class="btn btn-danger" id="btnCloseSession">Cerrar sesión</button>
-                    </li>
-
+                   
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="content" id="contenido">
+    <div class="content index-page sidebar-collapse" id="contenido">
         <div class="row no-gutters">
             <div class="col-md-4">
                 <div class="department-wrap p-4 ftco-animate">
@@ -146,15 +151,22 @@ z-index:999">
     </nav>
                 -->
 <script>
-    $("#btnCloseSession").click(function(){
-        <?php
-        session_destroy() 
-       ?>
-        window.location.href = "login.html";
 
-    })
+$(document).ready(function(){
+
+    $("#date_personal").click(function(){
+        $("#contenido").load("modulos/php/datosPersonales/datosPersonales.php")
+    });
+
+    $("#btnCloseSession").click(function(){
+        <?php   session_destroy() ?>
+        window.location.href = "login.html";
+    });
+})
+  
 </script>
     <script src="js/material-kit.js?v=2.0.5" type="text/javascript"></script>
+
 
 </body>
 
