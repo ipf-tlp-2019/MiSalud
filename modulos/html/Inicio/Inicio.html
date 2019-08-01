@@ -1,0 +1,69 @@
+<div class="row no-gutters">
+    <div class="col-md-4">
+        <div class="department-wrap p-4 ftco-animate" id="estudiosRecientes">
+            <div class="text p-2 text-center">
+                <div class="icon">
+                    <span class="material-icons" style='font-size:36px'>restore</span>
+                </div>
+                <h3><a>Estudios Recientes</a></h3>
+                <p>Visualizar los últimos estudios realizados</p>
+
+            </div>
+        </div>
+        <div class="department-wrap p-4 ftco-animate">
+            <div class="text p-2 text-center">
+                <div class="icon">
+                    <span class="fas fa-stethoscope" style="font-size:36px;"></span>
+                </div>
+                <h3><a href="#">Médicos Asociados</a></h3>
+                <p>Administre qué doctor podrá manejar y utilizar su historial médico</p>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="department-wrap p-4 ftco-animate" id="btnHistorialClinico">
+            <div class=" text p-2 text-center ">
+                <div class="icon ">
+                    <span class="fas fa-notes-medical " style="font-size:36px; "></span>
+                </div>
+                <h3><a>Historial Clínico</a></h3>
+                <p>Ver información medica</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-4 ">
+        <div class="department-wrap p-4 ftco-animate " id="btncentrosMedicos">
+            <div class="text p-2 text-center ">
+                <div class="icon ">
+                    <span class="fa fa-ambulance " style="font-size:36px; "></span>
+                </div>
+                <h3><a>Centros Médicos</a></h3>
+                <p>Encuentre el centro médico más cercanos</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $("#btnHistorialClinico").click(function() {
+
+        $("#contenido").load("modulos/html/historialClinico/historialClinico.html")
+
+    })
+    $("#estudiosRecientes").click(function() {
+        $("#contenido").load("modulos/html/estudiosRecientes/estudiosRecientes.html")
+
+    })
+    $("#btncentrosMedicos").click(function() {
+
+        $("#contenido").load("modulos/html/centrosMedicos/centrosMedicos.html")
+
+    })
+</script>

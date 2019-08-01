@@ -25,7 +25,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="js/bootstrap-datetimepicker.js"></script>
+
 
 
 </head>
@@ -35,7 +35,7 @@
     <nav class="navbar navbar-expand-lg bg-primary">
         <div class="container">
             <div class="navbar-translate">
-                <a class="navbar-brand"><i class="fas fa-laptop-medical" style="font-size:36px;"></i> &nbsp;<span>Mi </span><b>Salud</b> </a>
+                <a  id="btnInicio" class="navbar-brand"><i class="fas fa-laptop-medical" style="font-size:36px;"></i> &nbsp;<span>Mi </span><b>Salud</b> </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="navbar-toggler-icon"></span>
@@ -43,7 +43,7 @@
                 <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-
+        
             <div class="collapse navbar-collapse ">
                 <ul class="navbar-nav ml-auto">
                
@@ -78,81 +78,41 @@
     </nav>
 
     <div class="content index-page sidebar-collapse" id="contenido">
-        <div class="row no-gutters">
-            <div class="col-md-4">
-                <div class="department-wrap p-4 ftco-animate">
-                    <div class="text p-2 text-center">
-                        <div class="icon">
-                        <span class="material-icons" style='font-size:36px'>restore</span>
-                        </div>
-                        <h3><a >Estudios Recientes</a></h3>
-                        <p>Visualizar los últimos estudios realizados</p>
-                        
-                    </div>
-                </div>
-                <div class="department-wrap p-4 ftco-animate">
-                    <div class="text p-2 text-center">
-                        <div class="icon">
-                            <span class="fas fa-stethoscope" style="font-size:36px;"></span>
-                        </div>
-                        <h3><a href="#">Médicos Asociados</a></h3>
-                        <p>Administre qué doctor podrá manejar y utilizar su historial médico</p>
-                    </div>
-                </div>
-              
-
-            </div>
-
-            <div class="col-md-4">
-
-                <div class="department-wrap p-4 ftco-animate">
-                    <div class="text p-2 text-center">
-                        <div class="icon">
-                        <span class="fas fa-notes-medical" style="font-size:36px;"></span>                           
-                        </div>
-                        <h3><a href="#">Historial Clínico</a></h3>
-                        <p>Ver información medica</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-md-4">
-            <div class="department-wrap p-4 ftco-animate">
-                    <div class="text p-2 text-center">
-                        <div class="icon">
-                        <span class="fa fa-ambulance" style="font-size:36px;"></span>
-                        </div>
-                        <h3><a href="">Centros Médicos</a></h3>
-                        <p>Encuentre el centro médico más cercanos</p>
-                    </div>
-                </div>
-               
-            </div>
-        </div>
+      
     </div>
     </div>
     </div>
-    <!--
-    <nav class="navbar navbar-expand-lg bg-primary" style="position: fixed;
-left: 0;
-right: 0;
-bottom: 0;
-z-index:999">
-        <div class="container">
-            <div class="navbar-translate">
-                <a class="navbar-brand"><i class="fas fa-laptop-medical" style="font-size:36px;"></i> &nbsp;<span>Aca irían </span><b>Iconos</b> </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-                
-                </button>
-            </div>
-     
-        </div>
-    </nav>
-                -->
+
+
 <script>
 
+
 $(document).ready(function(){
+
+    $("#contenido").load("modulos/html/Inicio/Inicio.html")
+    
+    $("#estudiosRecientes").click(function(){
+       $("#contenido").load("modulos/html/estudiosRecientes/estudiosRecientes.html")
+        
+    })
+     
+    $("#btnInicio").click(function(){
+       $("#contenido").load("modulos/html/Inicio/Inicio.html")
+        
+    })
+     
+    
+    $("#btnInicio").click(function(){
+       $("#contenido").load("modulos/html/Inicio/Inicio.html")
+        
+    })
+    $("#btnAtras").click(function() {
+
+        $("#contenido").load("modulos/html/Inicio/Inicio.html")
+
+        }) 
+
+     
 
     $("#date_personal").click(function(){
         $("#contenido").load("modulos/php/datosPersonales/datosPersonales.php")
@@ -163,7 +123,9 @@ $(document).ready(function(){
         window.location.href = "login.html";
     });
 })
-  
+
+
+
 </script>
     <script src="js/material-kit.js?v=2.0.5" type="text/javascript"></script>
 
