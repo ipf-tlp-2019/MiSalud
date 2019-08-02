@@ -62,7 +62,14 @@ echo "
         $('#contenido').load('modulos/html/Inicio/Inicio.html')
 
     })
-</script>";
+</script>
+<div class='col-md-3 pt-3'>
+    <div class='form-group'>
+        <input type='text' class='form-control' id='matriculaMedico' placeholder='Ingrese Apellido del Médico'>
+    <button type='submit' class='btn btn-primary' id='buscarMedico'>Buscar Médico</button>  
+    </div>
+</div>" 
+";
 
  
  ?>
