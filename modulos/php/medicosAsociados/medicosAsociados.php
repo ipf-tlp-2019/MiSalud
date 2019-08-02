@@ -19,13 +19,17 @@ return false ;
 
 $conn=null;
 
-echo "<table class='table table-bordered'><thead style='background-color:#9c27b0; color:#fff'>
+echo "<div class='row'>
+<button class='btn btn-primary' id='btnAtras'>
+    <i class='material-icons' >arrow_back</i> Volver
+</button>
+</div>
+<table class='table table-bordered'><thead style='background-color:#9c27b0; color:#fff'>
         <th>NOMBRE</th>
         <th>APELLIDO</th>
         <th>MATRICULA NRO</th>
         <th>ESPECIALIDAD</th>
-
-    </thead>
+</thead>
 
     <tbody>
 
@@ -49,7 +53,16 @@ echo "
 
 
     </tbody>
-</table>";
+</table>
+
+
+<script>
+    $('#btnAtras').click(function() {
+
+        $('#contenido').load('modulos/html/Inicio/Inicio.html')
+
+    })
+</script>";
 
  
  ?>
