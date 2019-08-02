@@ -95,6 +95,11 @@ $(document).ready(function(){
        $("#contenido").load("modulos/html/estudiosRecientes/estudiosRecientes.html")
         
     })
+
+    $("#btnmedicoAsociado").click(function(){
+       $("#contenido").load("modulos/php/medicosAsociados/medicosAsociados.php")
+        
+    })
      
     $("#btnInicio").click(function(){
        $("#contenido").load("modulos/html/Inicio/Inicio.html")

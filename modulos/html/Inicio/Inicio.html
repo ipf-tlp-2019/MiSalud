@@ -1,6 +1,7 @@
 <div class="row no-gutters">
+
     <div class="col-md-4">
-        <div class="department-wrap p-4 ftco-animate" id="estudiosRecientes">
+        <div class="department-wrap p-4 ftco-animate" id="btnestudiosRecientes">
             <div class="text p-2 text-center">
                 <div class="icon">
                     <span class="material-icons" style='font-size:36px'>restore</span>
@@ -10,15 +11,19 @@
 
             </div>
         </div>
-        <div class="department-wrap p-4 ftco-animate">
-            <div class="text p-2 text-center">
-                <div class="icon">
-                    <span class="fas fa-stethoscope" style="font-size:36px;"></span>
+
+
+      
+            <div class="department-wrap p-4 ftco-animate" id="btnmedicoAsociado">
+                <div class="text p-2 text-center">
+                    <div class="icon">
+                        <span class="fas fa-stethoscope" style="font-size:36px;"></span>
+                    </div>
+                    <h3><a>Médicos Asociados</a></h3>
+                    <p>Administre qué doctor podrá manejar y utilizar su historial médico</p>
                 </div>
-                <h3><a href="#">Médicos Asociados</a></h3>
-                <p>Administre qué doctor podrá manejar y utilizar su historial médico</p>
             </div>
-        </div>
+
 
 
     </div>
@@ -57,13 +62,17 @@
         $("#contenido").load("modulos/html/historialClinico/historialClinico.html")
 
     })
-    $("#estudiosRecientes").click(function() {
+    $("#btnestudiosRecientes").click(function() {
         $("#contenido").load("modulos/html/estudiosRecientes/estudiosRecientes.html")
 
     })
-    $("#btncentrosMedicos").click(function() {
 
+    $("#btncentrosMedicos").click(function() {
         $("#contenido").load("modulos/html/centrosMedicos/centrosMedicos.html")
+
+    })
+    $("#btnmedicoAsociado").click(function() {
+        $("#contenido").load("modulos/php/medicosAsociados/medicosAsociados.php")
 
     })
 </script>

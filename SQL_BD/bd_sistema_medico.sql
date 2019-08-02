@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-07-2019 a las 18:12:15
+-- Tiempo de generación: 02-08-2019 a las 08:17:31
 -- Versión del servidor: 10.1.38-MariaDB
--- Versión de PHP: 7.1.28
+-- Versión de PHP: 7.3.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -110,6 +110,32 @@ CREATE TABLE `localidad` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `medico_asociado`
+--
+
+CREATE TABLE `medico_asociado` (
+  `ID_MEDICO_ASOCIADO` int(11) NOT NULL,
+  `NOMBRE_MEDICO` varchar(45) NOT NULL,
+  `APELLIDO_MEDICO` varchar(45) NOT NULL,
+  `MATRICULA_MEDICO` int(10) NOT NULL,
+  `ESPECIALIDAD_MEDICO` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `medico_asociado`
+--
+
+INSERT INTO `medico_asociado` (`ID_MEDICO_ASOCIADO`, `NOMBRE_MEDICO`, `APELLIDO_MEDICO`, `MATRICULA_MEDICO`, `ESPECIALIDAD_MEDICO`) VALUES
+(1, 'Juan ', 'Perez', 48596, 'Medico Cirujano'),
+(2, 'Josefina', 'Ramirez', 98324, 'Radiología '),
+(3, 'Tomas ', 'Caporal', 78165, 'Kinesiología '),
+(4, 'Agustina ', 'Delgado', 58469, 'Ginecología '),
+(5, 'Gastón Francisco', 'Lovera ', 84695, 'Cardiología '),
+(6, 'René', 'Favaloro', 65987, 'Medico Cirujano');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `persona`
 --
 
@@ -169,7 +195,8 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`ID_USUARIO`, `NOMBRE_USUARIO`, `APELLIDO_USUARIO`, `CORREO_USUARIO`, `PASSWORD_USUARIO`) VALUES
 (1, 'Alejandro', 'Bernal', 'alebernalmatias@gmail.com', '1234'),
-(2, 'Anabel', 'Arguello', 'anabel@gmail.com', '1234');
+(2, 'Anabel', 'Arguello', 'anabel@gmail.com', '1234'),
+(3, 'Alejandro', 'Sanabria', 'aalesann@gmail.com', '1234');
 
 -- --------------------------------------------------------
 
@@ -227,6 +254,12 @@ ALTER TABLE `institucion_medica`
   ADD PRIMARY KEY (`ID_INSTITUCION_MEDICA`);
 
 --
+-- Indices de la tabla `medico_asociado`
+--
+ALTER TABLE `medico_asociado`
+  ADD PRIMARY KEY (`ID_MEDICO_ASOCIADO`);
+
+--
 -- Indices de la tabla `persona`
 --
 ALTER TABLE `persona`
@@ -261,10 +294,16 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `medico_asociado`
+--
+ALTER TABLE `medico_asociado`
+  MODIFY `ID_MEDICO_ASOCIADO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `ID_USUARIO` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID_USUARIO` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
